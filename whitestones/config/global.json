@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.5.0"
+  },
+  "applications": {
+    "_default": {
+      "link": "anamnes.io"
+    },
+    "anamnes.io": {
+      "applicationId": "ElGYGALqbwqrM4GBrRKxjK2MRZ1cOZq2Bq3Xi0Ko",
+      "masterKey": "kzqMEAGVrjdLoRVZ8Onvvu7kMakHf6DcyFyZ6ozs"
+    }
+  }
+}

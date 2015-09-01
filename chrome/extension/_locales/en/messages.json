@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "anamnes.io",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Never forget anything anymore",
+    "description": "The description of the application"
+  }
+}

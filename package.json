@@ -1,0 +1,35 @@
+{
+  "name": "anamnes",
+  "description": "Never forget anything anymore !",
+  "version": "1.0.0",
+  "dependencies": {
+    "parse": "latest",
+    "parse-react": "latest",
+    "parseuri": "0.0.4",
+    "react": "latest",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babelify": "latest",
+    "browserify": "latest",
+    "watch": "latest"
+  },
+  "scripts": {
+    "build:chrome.popup": "browserify chrome/scripts/popup/main.js -o chrome/extension/scripts/popup.js",
+    "watch:chrome.popup": "watch \"npm run build:chrome.popup\" chrome/scripts/popup",
+    "build:chrome.background": "browserify chrome/scripts/background/main.js -o chrome/extension/scripts/background.js",
+    "watch:chrome.background": "watch \"npm run build:chrome.background\" chrome/scripts/background",
+    "build:chrome": "npm run build:chrome.popup && npm run build:chrome.background",
+    "watch:chrome": "watch \"npm run build:chrome\" chrome/scripts/",
+    "build:whitestones": "browserify whitestones/dev/js/app.js -o whitestones/public/js/bundle.js",
+    "watch:whitestones": "watch \"npm run build:whitestones\" whitestones/dev/js",
+    "build": "npm run build:chrome && npm run build:whitestones",
+    "watch": "watch \"npm run build\" chrome/scripts/",
+    "deploy": "c:\\Parse\\Parse.exe version"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }
+}

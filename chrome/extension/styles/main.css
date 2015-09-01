@@ -1,0 +1,97 @@
+/**:focus {
+	outline: 0;
+}
+
+a:focus {
+	outline: 0;
+}
+
+*::selection {
+	text-shadow: none; 
+	background: #909090; 
+	color: #fff;
+}
+
+body {
+  padding: 20px;
+  width: 400px;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+	background: #333;
+	padding: 10px;
+}
+
+header h1 {
+	font-size: 24px;
+	color: #fff;
+	margin: 0;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+#entrylist ul, #entrylist li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#entrylist li a {
+	display: block;
+	padding: 10px;
+	border-bottom: 1px solid #eee;
+	text-decoration: none;
+	color: #333;
+}
+
+#entrylist li a:hover {
+	background: #eee;
+	color: #000;
+}
+
+#historylist ul {
+  list-style: none;
+  padding-left: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-overflow: ellipsis;
+  margin: 10px -7px 0 -7px;
+  border-top: 1px solid #333;
+  position: absolute;
+  top: 45px;
+  bottom: 25px;
+  width: 100%;
+  overflow-y: auto;
+}
+#historylist ul li {
+  margin-left: 0;
+  font-size: 15px;
+  padding: 7px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  position: relative;
+}
+
+#historylist ul li .bkg {
+  vertical-align: bottom;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-right: 5px;
+  background-size: 16px 16px;
+}
+
+#historylist ul li .url, #historylist ul li .title {
+  text-overflow: ellipsis;
+  width: calc(100% - 50px);
+  display: inline-block;
+  overflow: hidden;
+}
+#historylist ul li .url {
+  color: #666;
+  margin-left: 21px;
+  padding-top: 5px;
+}*/
