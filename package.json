@@ -3,26 +3,31 @@
   "description": "Never forget anything anymore !",
   "version": "1.0.0",
   "dependencies": {
+    "jquery": "^2.1.4",
+    "moment": "^2.10.6",
     "parse": "latest",
     "parse-react": "latest",
-    "parseuri": "0.0.4",
+    "parseuri": "latest",
     "react": "latest",
-    "underscore": "^1.8.3"
+    "underscore": "latest"
   },
   "devDependencies": {
     "babelify": "latest",
     "browserify": "latest",
-    "watch": "latest"
+    "watch": "latest",
+    "watchify": "latest"
   },
   "scripts": {
     "build:chrome.popup": "browserify chrome/scripts/popup/main.js -o chrome/extension/scripts/popup.js",
-    "watch:chrome.popup": "watch \"npm run build:chrome.popup\" chrome/scripts/popup",
+    "watch:chrome.popup": "watchify chrome/scripts/popup/main.js -o chrome/extension/scripts/popup.js -v -d",
     "build:chrome.background": "browserify chrome/scripts/background/main.js -o chrome/extension/scripts/background.js",
-    "watch:chrome.background": "watch \"npm run build:chrome.background\" chrome/scripts/background",
+    "watch:chrome.background": "watchify chrome/scripts/background/main.js -o chrome/extension/scripts/background.js -v -d",
     "build:chrome": "npm run build:chrome.popup && npm run build:chrome.background",
-    "watch:chrome": "watch \"npm run build:chrome\" chrome/scripts/",
-    "build:whitestones": "browserify whitestones/dev/js/app.js -o whitestones/public/js/bundle.js",
-    "watch:whitestones": "watch \"npm run build:whitestones\" whitestones/dev/js",
+    "watch:chrome": "start npm run watch:chrome.popup && start npm run watch:chrome.background",
+    "build:whitestones.todo": "browserify whitestones/dev/todo/app.js -o whitestones/public/todo/js/bundle.js",
+    "watch:whitestones.todo": "watchify whitestones/dev/todo/app.js -o whitestones/public/todo/js/bundle.js -v -d",
+    "build:whitestones.anybudget": "browserify whitestones/dev/anybudget/app.js -o whitestones/public/anybudget/js/bundle.js",
+    "watch:whitestones.anybudget": "watchify whitestones/dev/anybudget/app.js -o whitestones/public/anybudget/js/bundle.js -v -d",
     "build": "npm run build:chrome && npm run build:whitestones",
     "watch": "watch \"npm run build\" chrome/scripts/",
     "deploy": "c:\\Parse\\Parse.exe version"

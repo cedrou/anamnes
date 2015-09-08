@@ -1,32 +1,40 @@
-"use strict";
+window.addEventListener('focus',function() { chrome.runtime.sendMessage('focus'); });
+window.addEventListener('blur',function() { chrome.runtime.sendMessage('blur'); });
 
-/*
-$(document).ready(function() {
-	var createMarkticleButton = function() {
-		var styles = 'position: fixed; z-index: 9999; bottom: 20px; left: 20px;';
-		$('body').append('<button id="markticle_button" style="' + styles + '">Mark me!</button>');
-	};
+//chrome.runtime.sendMessage('injected');
+
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+	if (message == "fadeIn") {
+		displayOverlay();
+	} else if (message == "fadeOut") {
+		removeOverlay();
+	}
 	
-	$(document).on('click', '#markticle_button', function() {
-		var title = document.title;
-		var url = window.location.href;
-		console.log(title + ': ' + url);
-	});
-	
-	createMarkticleButton();
 });
 
-$(document).on('click', '#markticle_button', function() {
-	var title = document.title;
-	var url = window.location.href;
-	chrome.extension.sendMessage({
-		action : 'add',
-		data: {
-			title: title,
-			url: url
-		}
-	});
+function displayOverlay(){
+	var div = document.getElementById("anamnes-overlay");
+	if (div != null)
+		return;
+		
+	div = document.createElement('div');
+	div.id = "anamnes-overlay";
 	
-	alert('Marked!');
-});
-*/
+	div.style.position="fixed";
+	div.style.top="0";
+	div.style.left="0";
+	div.style.width="100%";
+	div.style.height="100%";
+    div.style.backgroundColor="rgba(0,0,0,.5)";
+	div.style.zIndex="10000";
+	
+	document.body.appendChild(div);
+	
+	
+};
+
+function removeOverlay() {
+	var div = document.getElementById("anamnes-overlay");
+	if (div != null)
+		document.body.removeChild(div);
+}

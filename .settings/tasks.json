@@ -13,8 +13,8 @@
     "isShellCommand": true,
     "tasks": [
         {
-            "args": ["run", "watch"],
-            "taskName": "watch",
+            "args": ["run", "watch:chrome"],
+            "taskName": "watch:chrome",
             "suppressTaskName": true,
             "isBuildCommand": true, // make this the Task: Run Build Task gesture
             "isWatching": true // tell VS Code not wait for this task to finish
